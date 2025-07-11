@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Timegaze Clone</title>
+    <style>
+        .percent {
+            height: 5px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- In popup.html -->
+    <button id="clear-btn">Clear All Data</button>
+    <section>
+        <h3>Past 7 Days</h3>
+        <table id="week-log">
+            <tr>
+                <th>Date</th>
+                <th>Total Time</th>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h3>Details</h3>
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th width="1"></th>
+                    <th width="99%">domain</th>
+                    <th width="1" nowrap>time</th>
+                </tr>
+            </thead>
+            <tbody id="log"></tbody>
+        </table>
+    </section>
+    <script src="popup.js"></script>
+</body>
+
+</html>

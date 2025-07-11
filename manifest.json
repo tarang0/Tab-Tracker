@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "TabTracker",
+  "version": "1.0.0",
+  "description": "Captures screen time from active pages",
+  "permissions": [
+    "tabs",
+    "storage",
+    "idle"
+  ],
+  "key":"MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC0BRmtxe2XUifjxyLMr7C2KLynvfaT7XOFOPBWt62Ss1LevHzP6aM0pHymuLp/PWGUwdIm9VXpVwhCDZPXY2P5Rn7nZk4UH3pw0/Ijxfp2NBUs+/DGX5ZWbFrWcLKaf+jLih1yWofSPgvexIqd4e0lbEzuqGSZLxk8+Y0zZbfMoCcjsdsEjPRDXbydf5kgIfJgtpaJ4skjkky5X2ZW+OoMtYcrklhTSVONdNiDaEW/710ZAqVHnm1DkGp99yx4x9RLdVkoAitpL2qiThrsX2qOGXa3s94uSHpNlBiyHTCxOwgKBuRv/cy2GSLNpPift3uktDDon024DW75ErTJr4ktAgMBAAECggEAF8yw0hOKehNSKL/+rsxEyDW8iKS0Vmbx0IQa6iwLFjZVAhODS22FC9mkjS97oITPQ35tt9l+4S7bbaLOj+RDpwTAlFEnM2vcoSa0KtyVZKPgGia4yfvV1q5+l+klrl1eEUK86o24yn00zopyFQt1xxkkAU1hTLXjAqJaHkMYDe+erUu/VH4yaxUzK56gsRfOtPunMXhCQ0QJLRf4UhXv2JOYZWh0PNacAjRv2OICS3wNx9W5tFkGJA4eNb2aRZ7p4c/vureEWCXcU5qT9e1PPdJXR4xLDcwIhlpZjrxFtExe2bL0zxrTCgx8ItAalxEf2G9ljF0U5RIP2XvzHGYBNQKBgQDvgAC0sdODN/OThvME6PEy0gMRT27H/KyOH8vAG40LWjuboZVBkj13myhQtHRLPxkOzJeTxPeY8d3RLcsCxRMmrpbEFVYxf0DrTpQswPjJ5kQyQ/avFjbl1szqwm/tLVNXeBnQPRG1uGfmz8YFRLPT6Z6Qfd8TfymZk2G76mon2wKBgQDAbBAxHsQmXNiWcdf7aOb8k7QivJT3bO7uJWfg/QqQ08MT60ULfP7fhGmaRnt+Ks6vVQzv8YcXiO6UgtmjrsQbMty+iWvg3ktMaiopFwGBQPR3Ja4eAPDr8INS5XLtFcD4PNuaGfnnRvtDKaRKABGprJb4suyMnOLcZLjiAzxFlwKBgBSSHP1oLK+flac9NxBb5aOk0CijdvNsa3HFn11/wEySUn5akZRROEBWrk7IQRjZcZCI2BgUGeQkGhZGZaJ2RN/UrRRodL/Jm0zasfVqGbRVt9PNbJm7QbnaCj27t5tagkcIBMeTBzthfGMhw3NeZEe2UC0+8nMdP/h15TYbu0RzAoGAbWhEIJm8r49U+t2KD4HK7EvTPXj6PmCqza9pDAz0R/qPzbCU1n5gsJgqLzTqHIeccyapr3gl9qS9+qUXuDCzgj9+MbwTIY1jRPSMOkbBbUuQdHpxMNAaLBzZnnWlzdXznXGE727bn7vFO5/esNCvOklOoeOiCiVd/DAsyx1J1MsCgYEA4FMaqpZHzteZYyJFUJ05js71yCYZR8Bb7yqAG/fHLqIq1cihA5f+zLVy6IPoSumDPjy33xKbDH3Hgz7s1qX7SI5/oM3OtFp/E9ejahKVdPFoDYfatkiQVxZuTlDSp/6ygWrmx0Lr9ro8hDlu7ZfiQHUOLj8DS4amTIV8965BSjs=",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon16.png"
+  }
+}
