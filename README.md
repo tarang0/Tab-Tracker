@@ -1,5 +1,8 @@
 # Tab Tracker
 
+<img width="399" height="717" alt="image" src="https://github.com/user-attachments/assets/f0063949-d79a-4de3-973a-189d4bcfa5aa" />
+
+
 **Tab Tracker** is a lightweight Chrome extension that tracks how much time you spend on each website per day and summarizes your browsing data over the past 7 days.
 
 Useful for:
