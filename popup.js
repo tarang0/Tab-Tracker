@@ -120,10 +120,36 @@ function loadPastWeekData() {
   });
 }
 
+// function humanReadable(sec) {
+//   const m = Math.floor(sec / 60);
+//   const h=Math.floor(m/60);
+//   m=m-h*60;
+//   const s = sec % 60;
+
+//   if(h===0){
+//     if(m===0 & s!=0){
+//         return `${s}s`;
+//     }
+//     if(s===0 & m!=0){
+//         return `${m}m`;
+//     }
+//   }
+
+//   if (m === 0) return `${s}s`;
+//   if (s === 0) return `${m}m`;
+//   return `${h}h ${m}m ${s}s`;
+// }
 function humanReadable(sec) {
-  const m = Math.floor(sec / 60);
+  const h = Math.floor(sec / 3600);
+  const m = Math.floor((sec % 3600) / 60);
   const s = sec % 60;
-  if (m === 0) return `${s}s`;
-  if (s === 0) return `${m}m`;
-  return `${m}m ${s}s`;
+
+  if (h === 0 && m === 0 && s !== 0) return `${s}s`;
+  if (h === 0 && m !== 0 && s === 0) return `${m}m`;
+  if (h === 0 && m !== 0 && s !== 0) return `${m}m ${s}s`;
+  if (h !== 0 && m === 0 && s === 0) return `${h}h`;
+  if (h !== 0 && m !== 0 && s === 0) return `${h}h ${m}m`;
+  if (h !== 0 && m === 0 && s !== 0) return `${h}h ${s}s`;
+  return `${h}h ${m}m ${s}s`;
 }
+

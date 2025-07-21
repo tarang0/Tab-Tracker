@@ -172,10 +172,13 @@ function setCurrentDomain(domain) {
 }
 
 chrome.runtime.onInstalled.addListener(() => {
+    console.log("installed");
     chrome.storage.local.set({ domain: "", timestamp: 0 });
 });
 
 chrome.storage.onChanged.addListener((changes, areaName) => {
+    console.log("areaname: "+areaName);
+    console.log("changes: "+ JSON.stringify(changes));
     if (areaName !== "local" || !changes.domain) return;
 
     const { oldValue, newValue } = changes.domain;
@@ -184,6 +187,7 @@ chrome.storage.onChanged.addListener((changes, areaName) => {
     chrome.storage.local.get(["timestamp"], ({ timestamp }) => {
         if (oldValue && timestamp) {
             const seconds = Math.round((Date.now() - timestamp) / 1000);
+            console.log("adding seconds: "+seconds);
             const today = new Date().setHours(0, 0, 0, 0).toString();
 
             chrome.storage.local.get([today], (result) => {
@@ -198,19 +202,19 @@ chrome.storage.onChanged.addListener((changes, areaName) => {
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
     if (changeInfo.status === "complete") {
-        getCurrentDomain().then(setCurrentDomain).then(domain => console.log('updated', domain));
+        getCurrentDomain().then(setCurrentDomain).then(domain => console.log('updated: ', domain));
     }
 });
 
 chrome.tabs.onActivated.addListener(() => {
-    getCurrentDomain().then(setCurrentDomain).then(domain => console.log('activated', domain));
+    getCurrentDomain().then(setCurrentDomain).then(domain => console.log('activated: ', domain));
 });
 
 chrome.windows.onFocusChanged.addListener((windowId) => {
     if (windowId === chrome.windows.WINDOW_ID_NONE) {
-        setCurrentDomain("").then(() => console.log("blur"));
+        setCurrentDomain("").then(() => console.log("focussed out of chrome"));
     } else {
-        getCurrentDomain().then(setCurrentDomain).then(domain => console.log('focus', domain));
+        getCurrentDomain().then(setCurrentDomain).then(domain => console.log('focus back in: ', domain));
     }
 });
 
